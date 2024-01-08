@@ -9,6 +9,7 @@
 - TailwindCSS
 - Mailpit
 - Laravel Pint
+- Husky
 
 ## Installation du projet
 
@@ -104,3 +105,8 @@ Il est disponible ici : https://github.com/romainrhd/wankul-scrapper
 ```bash
 ./vendor/bin/pint -v
 ```
+
+### Hooks Git avec Husky
+Utilisation de Husky pour ajouter des hooks à Git.
+- Commitlint : permet d'ajouter des conventions pour les messages de commit.
+- Laravel Pint : permet de formater le code juste avant de créer le commit.

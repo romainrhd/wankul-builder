@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+files=$(git diff --cached --name-only --diff-filter=ACM -- '*.php');
+vendor/bin/sail pint $files -q
+
+git add $files
