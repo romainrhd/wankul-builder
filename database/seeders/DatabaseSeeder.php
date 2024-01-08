@@ -14,6 +14,9 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             ExpansionsSeeder::class,
+            CombosSeeder::class,
+            IllustratorsSeeder::class,
+            RaretiesSeeder::class,
         ]);
     }
 }
