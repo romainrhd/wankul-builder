@@ -107,6 +107,16 @@ Il est disponible ici : https://github.com/romainrhd/wankul-scrapper
 ```
 
 ### Hooks Git avec Husky
+
 Utilisation de Husky pour ajouter des hooks à Git.
 - Commitlint : permet d'ajouter des conventions pour les messages de commit.
 - Laravel Pint : permet de formater le code juste avant de créer le commit.
+
+### Commitizen
+
+Commitizen est un outil qui sert d'aide à la rédaction d'un message de commit pour respecter les conventions 
+du commitlint. C'est surtout utile lors de l'onboarding d'un développeur sur un projet. 
+
+Pour l'utiliser, il suffit d'ajout au stage ses modifications puis de taper la commande `cz` à la place de lancer la
+commande `git commit -m "mon message"`. Commitizen va alors dialoguer avec le développeur en ligne de commande pour
+l'aider à rédiger son message de commit.
