@@ -2,6 +2,8 @@
 
 ## Technologies utilisées
 
+- PHP 8.2
+- Node 20
 - Laravel 10
 - MariaDB
 - InertiaJS
@@ -10,6 +12,7 @@
 - Mailpit
 - Laravel Pint
 - Husky
+- Commitizen
 
 ## Installation du projet
 
@@ -51,6 +54,14 @@
     ```bash
     sail artisan key:generate
     ```
+8. Installation des dépendances front : 
+    ```bash
+    sail npm install
+    ```
+9. Lancement du projet :
+    ```bash
+    sail npm run dev
+    ```
 
 </details>
 <details>
@@ -86,9 +97,13 @@
    ```bash
    php artisan key:generate
     ```
-8. Lancement du projet :
+8. Installation des dépendances front :
     ```bash
-    php artisan serve
+    npm install
+    ```
+9. Lancement du projet :
+    ```bash
+    npm run dev
     ```
 
 </details>
