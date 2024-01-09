@@ -16,9 +16,10 @@ return new class extends Migration
             $table->string('number');
             $table->string('name');
             $table->string('image');
-            $table->foreignId('illustrator_id')->unsigned();
-            $table->foreignId('rarety_id')->unsigned();
-            $table->foreignId('expansion_id')->unsigned();
+            $table->boolean('published')->default(false);
+            $table->foreignId('illustrator_id')->unsigned()->nullable();
+            $table->foreignId('rarety_id')->unsigned()->nullable();
+            $table->foreignId('expansion_id')->unsigned()->nullable();
             $table->timestamps();
         });
     }

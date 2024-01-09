@@ -16,6 +16,7 @@ class Card extends Model
         'number',
         'name',
         'image',
+        'publish',
     ];
 
     public function characterCard(): HasOne
