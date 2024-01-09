@@ -6,6 +6,11 @@
         "build": "vue-tsc && vite build && vite build --ssr",
         "prepare": "husky install"
     },
+    "config": {
+        "commitizen": {
+            "path": "cz-conventional-changelog"
+        }
+    },
     "devDependencies": {
         "@commitlint/cli": "^18.4.4",
         "@commitlint/config-conventional": "^18.4.4",
@@ -15,6 +20,7 @@
         "@vue/server-renderer": "^3.2.31",
         "autoprefixer": "^10.4.12",
         "axios": "^1.6.1",
+        "commitizen": "^4.3.0",
         "husky": "^8.0.0",
         "laravel-vite-plugin": "^1.0.0",
         "postcss": "^8.4.31",
