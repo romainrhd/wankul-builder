@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 
 class ExpansionsSeeder extends Seeder
 {
-    private const EXPANSIONS = [
+    private const array EXPANSIONS = [
         'Origins', 'Campus', 'Hors Série',
     ];
 

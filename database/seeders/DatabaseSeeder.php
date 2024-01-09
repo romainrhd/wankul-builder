@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
             ExpansionsSeeder::class,
             CombosSeeder::class,
             IllustratorsSeeder::class,
-            RaretiesSeeder::class,
+            RaritiesSeeder::class,
         ]);
     }
 }

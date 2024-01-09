@@ -33,9 +33,9 @@ class Card extends Model
         return $this->belongsTo(Illustrator::class);
     }
 
-    public function rarety(): BelongsTo
+    public function rarity(): BelongsTo
     {
-        return $this->belongsTo(Rarety::class);
+        return $this->belongsTo(Rarity::class);
     }
 
     public function expansion(): BelongsTo

@@ -8,7 +8,7 @@ use Illuminate\Database\Seeder;
 
 class CombosSeeder extends Seeder
 {
-    private const COLORS = [
+    private const array COLORS = [
         'Jaune', 'Violet',
     ];
 

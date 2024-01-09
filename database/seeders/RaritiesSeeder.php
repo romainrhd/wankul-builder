@@ -2,12 +2,12 @@
 
 namespace Database\Seeders;
 
-use App\Models\Rarety;
+use App\Models\Rarity;
 use Illuminate\Database\Seeder;
 
-class RaretiesSeeder extends Seeder
+class RaritiesSeeder extends Seeder
 {
-    private const RARETIES = [
+    private const array RARITIES = [
         [
             'name' => 'Commune',
             'slug' => 'C',
@@ -51,10 +51,10 @@ class RaretiesSeeder extends Seeder
      */
     public function run(): void
     {
-        foreach (self::RARETIES as $rarety) {
-            Rarety::create([
-                'name' => $rarety['name'],
-                'slug' => $rarety['slug'],
+        foreach (self::RARITIES as $rarity) {
+            Rarity::create([
+                'name' => $rarity['name'],
+                'slug' => $rarity['slug'],
             ]);
         }
     }

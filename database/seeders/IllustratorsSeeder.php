@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 
 class IllustratorsSeeder extends Seeder
 {
-    private const ILLUSTRATORS = [
+    private const array ILLUSTRATORS = [
         'Léonard Lam',
         'Ben Gilletti',
         'Jaycee',
