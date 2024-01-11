@@ -1,6 +1,7 @@
 <?php
 
 test('can create card', function () {
+    Storage::fake('local');
     $response = $this->post('/api/card', [
         'number' => 1,
         'name' => 'Super carte',
@@ -8,4 +9,9 @@ test('can create card', function () {
     ]);
 
     $response->assertStatus(201);
+    $this->assertDatabaseHas('cards', [
+        'number' => 1,
+        'name' => 'Super carte',
+        'image' => '1.jpg',
+    ]);
 });

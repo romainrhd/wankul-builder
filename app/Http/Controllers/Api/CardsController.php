@@ -5,12 +5,37 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Card\StoreRequest;
 use App\Models\Card;
+use Exception;
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 
 class CardsController extends Controller
 {
-    public function store(StoreRequest $request)
+    /**
+     * @throws GuzzleException
+     */
+    public function store(StoreRequest $request): Card|Response
     {
-        // TODO : créer un service qui va télécharger l'image et utiliser un observer qui va appeler ce service
-        return Card::create($request->validated());
+        Storage::disk('local')->exists('cards') || Storage::disk('local')->makeDirectory('cards');
+
+        try {
+            $client = new Client();
+            $client->request('GET', $request->input('image'), [
+                'sink' => Storage::disk('local')->path("cards/{$request->input('number')}.jpg"),
+            ]);
+        } catch (Exception $exception) {
+            Log::error($exception->getMessage());
+
+            return response(['Download image not work'], 500);
+        }
+
+        return Card::create([
+            'number' => $request->input('number'),
+            'name' => $request->input('name'),
+            'image' => "{$request->input('number')}.jpg",
+        ]);
     }
 }
