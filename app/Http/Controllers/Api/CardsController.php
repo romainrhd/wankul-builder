@@ -11,6 +11,7 @@ use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\ImageManager;
 
 class CardsController extends Controller
 {
@@ -26,6 +27,11 @@ class CardsController extends Controller
             $client->request('GET', $request->input('image'), [
                 'sink' => Storage::disk('local')->path("cards/{$request->input('number')}.jpg"),
             ]);
+            if ($request->input('land')) {
+                $manager = ImageManager::gd();
+                $image = $manager->read(Storage::disk('local')->path("cards/{$request->input('number')}.jpg"));
+                $image->rotate(-90)->save(Storage::disk('local')->path("cards/{$request->input('number')}.jpg"));
+            }
         } catch (Exception $exception) {
             Log::error($exception->getMessage());
 

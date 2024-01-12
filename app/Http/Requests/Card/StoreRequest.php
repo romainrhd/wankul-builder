@@ -25,6 +25,7 @@ class StoreRequest extends FormRequest
             'number' => ['required', 'numeric'],
             'name' => ['required', 'string'],
             'image' => ['required', 'string'],
+            'land' => ['required', 'boolean'],
         ];
     }
 }
