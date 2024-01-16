@@ -6,6 +6,7 @@ test('can create card', function () {
         'number' => 1,
         'name' => 'Super carte',
         'image' => 'https://picsum.photos/200/300',
+        'land' => false,
     ]);
 
     $response->assertStatus(201);
